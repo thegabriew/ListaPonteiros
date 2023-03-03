@@ -7,19 +7,14 @@
 
 int main() {
 	
-	//declarando a string original
+	//declarando a string 
     char str_original[TAM_MAX];
     
-    //declarando o ponteiro da string original
+    //declarando o ponteiro da string 
     char *p_str_original = str_original;
     
-    //declarando a string sem vogais
-    char str_sem_vogais[TAM_MAX];
     
-     //declarando o ponteiro da string sem vogais
-    char *p_str_sem_vogais = str_sem_vogais;
-    
-    //declarando o tamanho da string original
+    //declarando o tamanho da string 
     int tam_str_original;
     int i;
 
@@ -30,22 +25,15 @@ int main() {
     tam_str_original = strlen(str_original);
 
 	//loop para separar as vogais
-	//usando o a função tolower para converter para minusculas
     for (i = 0; i < tam_str_original; i++) {
-        if (tolower(*(p_str_original + i)) != 'a' && tolower(*(p_str_original + i)) != 'e' &&
-            tolower(*(p_str_original + i)) != 'i' && tolower(*(p_str_original + i)) != 'o' &&
-            tolower(*(p_str_original + i)) != 'u') {
+        if (p_str_original[i]=='a' || p_str_original[i]=='e' || p_str_original[i]=='i' || p_str_original[i]=='o'|| p_str_original[i]=='u'){
             
-			//comparando se o array original tem ou não vogais
-            *(p_str_sem_vogais + i) = *(p_str_original + i);
-        }
+        } else {
+        	
+        	printf("%c",*(p_str_original+i));
+		}
     }
     
-    //usando o caractere nulo para verificar o fim do array
-    *(p_str_sem_vogais + i) = '\0';
-
-    printf("String original: %s\n", p_str_original);
-    printf("String sem vogais: %s\n", p_str_sem_vogais);
 
     return 0;
 }
