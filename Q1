@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+	
+	//criação da array
+    int numeros[5];
+    int *ponteiro = numeros;
+
+	//preenchendo a array
+    printf("Digite 5 numeros:\n");
+    for (int i=0; i<5; i++) {
+        scanf("%d", &numeros[i]);
+    }
+
+	//Mostrando os valores armazenados
+    printf("Valores armazenados e seus enderecos de memoria:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("\nNumero: %d | Endereco: %p\n", *(ponteiro + i), (ponteiro + i));
+    }
+
+    return 0;
+}
