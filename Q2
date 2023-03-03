@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define TAM_MAX 100
+
+int main() {
+	
+	//declarando a string original
+    char str_original[TAM_MAX];
+    
+    //declarando o ponteiro da string original
+    char *p_str_original = str_original;
+    
+    //declarando a string sem vogais
+    char str_sem_vogais[TAM_MAX];
+    
+     //declarando o ponteiro da string sem vogais
+    char *p_str_sem_vogais = str_sem_vogais;
+    
+    //declarando o tamanho da string original
+    int tam_str_original;
+    int i;
+
+    printf("Digite uma string: ");
+    fgets(str_original, TAM_MAX, stdin);
+
+	//usando a função "sterlen" para saber o tamanho da string
+    tam_str_original = strlen(str_original);
+
+	//loop para separar as vogais
+	//usando o a função tolower para converter para minusculas
+    for (i = 0; i < tam_str_original; i++) {
+        if (tolower(*(p_str_original + i)) != 'a' && tolower(*(p_str_original + i)) != 'e' &&
+            tolower(*(p_str_original + i)) != 'i' && tolower(*(p_str_original + i)) != 'o' &&
+            tolower(*(p_str_original + i)) != 'u') {
+            
+			//comparando se o array original tem ou não vogais
+            *(p_str_sem_vogais + i) = *(p_str_original + i);
+        }
+    }
+    
+    //usando o caractere nulo para verificar o fim do array
+    *(p_str_sem_vogais + i) = '\0';
+
+    printf("String original: %s\n", p_str_original);
+    printf("String sem vogais: %s\n", p_str_sem_vogais);
+
+    return 0;
+}
