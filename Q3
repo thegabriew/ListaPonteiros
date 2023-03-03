@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int var1, var2;
+    int *ptr1, *ptr2;
+
+    // Atribui os endereços das variáveis var1 e var2 aos  ponteiros ptr1 e ptr2
+    ptr1 = &var1;
+    ptr2 = &var2;
+
+    // Solicita ao usuário o valor de var1 e var2
+    printf("Digite o primeiro valor: ");
+    scanf("%d", ptr1);
+    printf("Digite o segundo valor: ");
+    scanf("%d", ptr2);
+
+    // Troca os valores das variáveis var1 e var2 utilizando os ponteiros ptr1 e ptr2
+    *ptr1 = *ptr1 + *ptr2; //Soma os valores apontados pelos ponteiros ptr1 e ptr2 e armazenando o resultado em *ptr1 
+    *ptr2 = *ptr1 - *ptr2; // Subtrai o valor apontado pelo ponteiro ptr2 do valor apontado pelo ponteiro ptr1 e armazenando o resultado em *ptr2 
+  
+   /* Subtraimos o valor apontado pelo ponteiro ptr2 do valor apontado pelo 
+   ponteiro ptr1 e armazenando o resultado em *ptr1 
+   (que, por sua vez, corresponde ao valor da variável var1). 
+   Como o valor de *ptr1 corresponde à soma original de var1 e var2, 
+   e o valor de *ptr2 corresponde ao valor original de var1, ao subtrair *ptr2 de *ptr1 estamos 
+   obtendo o valor original de var2. Assim, o valor de var1 passa a ser o valor original de var2.
+	*/
+	
+	*ptr1 = *ptr1 - *ptr2; 
+
+    // Imprime os valores atualizados das variáveis var1 e var2
+    printf("Valor 1: %d\n", var1);
+    printf("Valor 2: %d\n", var2);
+
+    return 0;
+}
