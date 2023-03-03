@@ -11,12 +11,9 @@ int main() {
     // Define que o ponteiro aponta para o endereço de memória da variável 'numero'
     ponteiro = &numero;
 
-    // Calcula o dobro do valor através do ponteiro
-    float dobro = *ponteiro * 2;
-
     // Imprime na tela o valor original e o dobro calculado
-    printf("O valor original eh: %.2f\n", *ponteiro);
-    printf("O dobro do valor eh: %.2f\n", dobro);
+    printf("Valor original: %.2f\n", *ponteiro);
+    printf("Dobro do valor: %.2f\n", 2* *ponteiro);
 
     return 0;
 }
