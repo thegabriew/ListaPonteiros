@@ -2,37 +2,34 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define TAM_MAX 100
-
 int main() {
+
+       //declarando variáveis 
+	char txt[100];
+	char *ptr = txt;
+	int size;
+        int copy;
+        char textcopy [size];
 	
-	//declarando a string 
-    char str_original[TAM_MAX];
-    
-    //declarando o ponteiro da string 
-    char *p_str_original = str_original;
-    
-    
-    //declarando o tamanho da string 
-    int tam_str_original;
-    int i;
-
-    printf("Digite uma string: ");
-    fgets(str_original, TAM_MAX, stdin);
-
-	//usando a função "sterlen" para saber o tamanho da string
-    tam_str_original = strlen(str_original);
-
-	//loop para separar as vogais
-    for (i = 0; i < tam_str_original; i++) {
-        if (p_str_original[i]=='a' || p_str_original[i]=='e' || p_str_original[i]=='i' || p_str_original[i]=='o'|| p_str_original[i]=='u'){
-            
-        } else {
-        	
-        	printf("%c",*(p_str_original+i));
+        //recebendo string
+	printf("Insira uma frase: ");
+	gets(txt);
+	
+	size = strlen(txt);
+	
+        //analisando a frase
+        for (int i=0; i<size; i++) {
+	if (ptr[i] == 'a' || ptr[i] == 'e' || ptr[i] == 'i' || ptr[i] == 'o' || ptr[i] == 'u' || ptr[i] == 'A' || ptr[i] == 'E' || ptr[i] == 'I' || ptr[i] == 'O' || ptr[i] == 'U') {}
+	else {
+		textcopy[copy] = ptr[i];
+		copy++;
 		}
-    }
-    
+	}
 
-    return 0;
+	for (int i = 0;i < copy;i++) {
+       printf("%c",textcopy[i]);
+
+}
+	
+	return 0;
 }
